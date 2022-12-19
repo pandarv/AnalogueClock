@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&display=swap');
+
+*, ::after, ::before{
+  margin: 0 ;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  --max-width: 800px;
+  --prim-color: rgb(0, 0, 0);
+  --secd-color: rgb(244, 244, 244);
+}
+
+html {
+  transition: all 0.25s ease-in-out;
+}
+
+html.dark{
+  --prim-color: rgb(244, 244, 244);
+  --secd-color: rgb(51, 51, 51);
+}
+
+html.dark{
+  color: var(--prim-color);
+  background-color: #111111;
+}
+
+body {
+  width: min(100% - 1rem, var(--max-width));
+  margin: 0 auto;
+}
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10rem;
+  min-height: 100vh;
+  /* display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 400px 400px;
+  place-items: center; */
+}
+
+.date{
+  font-size: 3rem;
+}
+
+.clock-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  height: 350px;
+  /* border: 1px solid lightsalmon; */
+}
+
+.needles {
+  position: relative;
+  top: -50%;
+  /* transform: translateX(-10px); */
+  /* border: 1px solid lightsalmon; */
+  /* transform: translate(-50% -50%); */
+  
+}
+
+.hour-needle,
+.minute-needle,
+.second-needle {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+}
+
+.hour-needle {
+  transform: rotate(45deg);
+  /* border: 1px solid salmon; */
+}
+.minute-needle {
+  transform: rotate(120deg);
+  /* border: 1px solid salmon; */
+}
+
+.second-needle {
+  transform: rotate(90deg);
+  /* border: 1px solid salmon; */
+}
+
+.center {
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.center::before,
+.center::after{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.center::before {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(255, 255, 255);
+}
+.center::after {
+  width: 6px;
+  height: 6px;
+  background-color: rgb(0, 0, 0);
+}
+.hour-needle .base,
+.minute-needle .base,
+.second-needle .base {
+  width: 2px;
+  background-color: black;
+  position: absolute;
+  /* top: 47%; */
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.hour-needle .base {
+  height: 50px;
+  top: 47%;
+  left: 50%;
+}
+
+.minute-needle .base {
+  height: 63.5px;
+  top: 39%;
+}
+
+.second-needle .base {
+  height: 160px;
+  top: 35%;
+  background-color: rgb(255, 0, 0);
+}
+
+.hour-needle .base::before,
+.minute-needle .base::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border: 2px solid black;
+  border-radius: 50%;
+  transform: translate(-50%, -100%);
+  /* background-color: black; */
+}
+
+
+.hour-needle .base::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  transform: translate(-50%, 100%);
+  border-radius: 50%;
+  background-color: black;
+}
+
+.second-needle .base::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border: 2px solid red;
+  border-radius: 50%;
+  transform: translate(-50%, 100%);
+}
+
+.hour-needle .top,
+.minute-needle .top {
+  width: 6px;
+  background-color: black;
+  clip-path: polygon(40% 0, 60% 0, 100% 100%, 0% 100%);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.hour-needle .top {
+  height: 25px;
+  top: 91px;
+}
+
+.minute-needle .top {
+  height: 35px;
+  top: 43px;
+}
+
+.dial {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  /* border: 2px solid black; */
+  /* border-radius: 50%; */
+  font-family: 'Gideon Roman', cursive;
+  font-size: 42px;
+  /* letter-spacing: -8px; */
+  /* border: 1px solid lightcoral; */
+}
+
+.twelve, .three, .six, .nine {
+  position: absolute;
+}
+
+.twelve {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.three {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+.six {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.nine {
+  top: 50%;
+  /* left: 50%; */
+  transform: translateY(-50%);
+}
+
