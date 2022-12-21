@@ -229,7 +229,36 @@ main {
   position: relative;
   height: 450px;
   width: 450px;
-  border: 1px solid lightcoral;
+}
+
+.seconds-dial {
+  position: absolute;
+  height: 390px;
+  width: 390px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.second-dial {
+  position: absolute;
+  height: 390px;
+  width: 390px;
+  text-align: center;
+}
+
+.tick {
+  display: inline-block;
+  height: 8px;
+  width: 2px;
+  background-color: var(--prim-color) ;
+}
+.tick-big {
+  display: inline-block;
+  height: 10px;
+  width: 2px;
+  background-color: rgb(255, 0, 0);  /* border: 1px solid lightcoral; */
 }
 
 .outer-box{
@@ -239,7 +268,6 @@ main {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 1px solid lightskyblue;
   border-radius: 50%;
 }
 .inner-box {
@@ -249,8 +277,6 @@ main {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* border-radius: 50%; */
-  border: 1px solid lightsalmon;
 }
 
 
@@ -290,7 +316,7 @@ main {
   width: 2px;
   top: 23%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(0deg);
   transform-origin: 50% 83.5%;
   background-color: rgb(255, 0, 0);
 }
@@ -313,7 +339,7 @@ main {
   position: absolute;
   top: 46%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(0deg);
   transform-origin: 50% 70%;
 }
 
@@ -349,7 +375,7 @@ main {
   position: absolute;
   top: 34%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(1deg);
+  transform: translate(-50%, -50%) rotate(0deg);
   transform-origin: 50% 110%;
 }
 
