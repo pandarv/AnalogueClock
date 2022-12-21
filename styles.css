@@ -40,53 +40,11 @@ main {
   flex-direction: column;
   gap: 10rem;
   min-height: 100vh;
-  /* display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 400px 400px;
-  place-items: center; */
 }
 
 .date{
   font-size: 3rem;
 }
-
-.clock-container {
-  width: 450px;
-  height: 450px;
-  border: 1px solid lightskyblue;
-}
-
-.needles {
-  position: relative;
-  
-  /* top: -50%; */
-  /* transform: translateX(-10px); */
-  /* border: 1px solid lightsalmon; */
-  /* transform: translate(-50% -50%); */
-  
-}
-
-.hour-needle,
-.minute-needle,
-.second-needle {
-  position: absolute;
-  width: 350px;
-  height: 350px;
-}
-
-/* .hour-needle {
-  transform: rotate(45deg);
-  border: 1px solid salmon;
-}
-.minute-needle {
-  transform: rotate(120deg);
-  border: 1px solid salmon;
-}
-
-.second-needle {
-  transform: rotate(90deg);
-  border: 1px solid salmon;
-} */
 
 .center {
   height: 14px;
@@ -118,84 +76,6 @@ main {
   height: 6px;
   background-color: var(--prim-color);
 }
-.hour-needle .base,
-.minute-needle .base,
-.second-needle .base {
-  width: 2px;
-  background-color: var(--prim-color);
-  position: absolute;
-  /* top: 47%; */
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.hour-needle .base {
-  height: 50px;
-  top: 47%;
-  left: 50%;
-}
-
-.minute-needle .base {
-  height: 63.5px;
-  top: 39%;
-}
-
-.second-needle .base {
-  height: 160px;
-  top: 35%;
-  background-color: rgb(255, 0, 0);
-}
-
-.hour-needle .base::before,
-.minute-needle .base::before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 12px;
-  height: 12px;
-  border: 2px solid var(--prim-color);
-  border-radius: 50%;
-  transform: translate(-50%, -100%);
-  /* background-color: black; */
-}
-
-
-.hour-needle .base::after {
-  content: '';
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 8px;
-  height: 8px;
-  transform: translate(-50%, 100%);
-  border-radius: 50%;
-  background-color: var(--prim-color);
-}
-
-.second-needle .base::after {
-  content: '';
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 12px;
-  height: 12px;
-  border: 2px solid red;
-  border-radius: 50%;
-  transform: translate(-50%, 100%);
-}
-
-.hour-needle .top,
-.minute-needle .top {
-  width: 6px;
-  background-color: var(--prim-color);
-  clip-path: polygon(40% 0, 60% 0, 100% 100%, 0% 100%);
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 50%);
-}
 
 .hour-needle .top {
   height: 25px;
@@ -208,15 +88,8 @@ main {
 }
 
 .dial {
-  /* position: relative; */
-  /* width: 350px;
-  height: 350px; */
-  /* border: 2px solid black; */
-  /* border-radius: 50%; */
   font-family: 'Gideon Roman', cursive;
   font-size: 32px;
-  /* letter-spacing: -8px; */
-  /* border: 1px solid lightcoral; */
 }
 
 .dial-hr {
@@ -246,6 +119,7 @@ main {
   height: 390px;
   width: 390px;
   text-align: center;
+  vertical-align: text-bottom;
 }
 
 .tick {
@@ -256,8 +130,8 @@ main {
 }
 .tick-big {
   display: inline-block;
-  height: 10px;
-  width: 2px;
+  height: 12px;
+  width: 4px;
   background-color: rgb(255, 0, 0);  /* border: 1px solid lightcoral; */
 }
 

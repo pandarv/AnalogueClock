@@ -6,7 +6,6 @@ const secTick = document.querySelector('.seconds-dial')
 
 //second ticks on dial
 
-// secTick.innerHTML = `<div class="second-dial"><div class="tick"></div></div>`
 for(let i=1; i <= 60; i++){
   const divTick = document.createElement('div')
   divTick.className = 'tick'
@@ -17,10 +16,14 @@ for(let i=1; i <= 60; i++){
 }
 
 const secondTick = document.querySelectorAll('.second-dial')
+const ticks = document.querySelectorAll('.tick')
 
-console.log(secTick)
-console.log(secondTick)
+
+// Rotation of all black ticks on every second
 secondTick.forEach((dial, index) => dial.style.transform = `rotate(${6 * index}deg)`)
+
+// Rotation of all red colored ticks on hrs
+ticks.forEach((tick, index) => index % 5 === 0 && tick.classList.add('tick-big') )
 
 // Rotation of all the hr numbers
 dialHr.forEach((hr, index) => hr.style.transform = `rotate(${30 * index}deg)` )
