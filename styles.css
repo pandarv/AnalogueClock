@@ -51,17 +51,15 @@ main {
 }
 
 .clock-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 350px;
-  height: 350px;
-  /* border: 1px solid lightsalmon; */
+  width: 450px;
+  height: 450px;
+  border: 1px solid lightskyblue;
 }
 
 .needles {
   position: relative;
-  top: -50%;
+  
+  /* top: -50%; */
   /* transform: translateX(-10px); */
   /* border: 1px solid lightsalmon; */
   /* transform: translate(-50% -50%); */
@@ -76,25 +74,25 @@ main {
   height: 350px;
 }
 
-.hour-needle {
+/* .hour-needle {
   transform: rotate(45deg);
-  /* border: 1px solid salmon; */
+  border: 1px solid salmon;
 }
 .minute-needle {
   transform: rotate(120deg);
-  /* border: 1px solid salmon; */
+  border: 1px solid salmon;
 }
 
 .second-needle {
   transform: rotate(90deg);
-  /* border: 1px solid salmon; */
-}
+  border: 1px solid salmon;
+} */
 
 .center {
   height: 14px;
   width: 14px;
   border-radius: 50%;
-  background-color: rgb(0, 0, 0);
+  background-color: var(--prim-color);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -113,18 +111,18 @@ main {
 .center::before {
   width: 10px;
   height: 10px;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--secd-color);
 }
 .center::after {
   width: 6px;
   height: 6px;
-  background-color: rgb(0, 0, 0);
+  background-color: var(--prim-color);
 }
 .hour-needle .base,
 .minute-needle .base,
 .second-needle .base {
   width: 2px;
-  background-color: black;
+  background-color: var(--prim-color);
   position: absolute;
   /* top: 47%; */
   left: 50%;
@@ -156,7 +154,7 @@ main {
   left: 50%;
   width: 12px;
   height: 12px;
-  border: 2px solid black;
+  border: 2px solid var(--prim-color);
   border-radius: 50%;
   transform: translate(-50%, -100%);
   /* background-color: black; */
@@ -173,7 +171,7 @@ main {
   height: 8px;
   transform: translate(-50%, 100%);
   border-radius: 50%;
-  background-color: black;
+  background-color: var(--prim-color);
 }
 
 .second-needle .base::after {
@@ -192,7 +190,7 @@ main {
 .hour-needle .top,
 .minute-needle .top {
   width: 6px;
-  background-color: black;
+  background-color: var(--prim-color);
   clip-path: polygon(40% 0, 60% 0, 100% 100%, 0% 100%);
   position: absolute;
   left: 50%;
@@ -210,39 +208,164 @@ main {
 }
 
 .dial {
-  position: relative;
-  width: 350px;
-  height: 350px;
+  /* position: relative; */
+  /* width: 350px;
+  height: 350px; */
   /* border: 2px solid black; */
   /* border-radius: 50%; */
   font-family: 'Gideon Roman', cursive;
-  font-size: 42px;
+  font-size: 32px;
   /* letter-spacing: -8px; */
   /* border: 1px solid lightcoral; */
 }
 
-.twelve, .three, .six, .nine {
+.dial-hr {
   position: absolute;
+  text-align: center;
+  width: 350px;
+  height: 350px;
+}
+.box {
+  position: relative;
+  height: 450px;
+  width: 450px;
+  border: 1px solid lightcoral;
 }
 
-.twelve {
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.three {
+.outer-box{
+  position: absolute;
+  height: 350px;
+  width: 350px;
   top: 50%;
-  right: 0;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid lightskyblue;
+  border-radius: 50%;
 }
-.six {
+.inner-box {
+  position: absolute;
+  height: 250px;
+  width: 250px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* border-radius: 50%; */
+  border: 1px solid lightsalmon;
+}
+
+
+.minute-center {
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background-color: var(--prim-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.minute-center::before,
+.minute-center::after{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-center::before {
+  width: 10px;
+  height: 10px;
+  background-color: var(--secd-color);
+}
+.minute-center::after {
+  width: 6px;
+  height: 6px;
+  background-color: var(--prim-color);
+}
+.second-base {
+  position: absolute;
+  height: 200px;
+  width: 2px;
+  top: 23%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  transform-origin: 50% 83.5%;
+  background-color: rgb(255, 0, 0);
+}
+.second-base::after {
+  content: '';
+  position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%);
-}
-.nine {
-  top: 50%;
-  /* left: 50%; */
-  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border: 2px solid red;
+  border-radius: 50%;
+  transform: translate(-50%, 100%);
 }
 
+.hour-base {
+  width: 2px;
+  height: 50px;
+  background-color: var(--prim-color);
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  transform-origin: 50% 70%;
+}
+
+.hour-base::after,
+.minute-base::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--prim-color);
+  border-radius: 50%;
+  transform: translate(-50%, -100%);
+}
+
+.hour-base::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  transform: translate(-50%, 100%);
+  border-radius: 50%;
+  background-color: var(--prim-color);
+}
+
+.minute-base {
+  width: 2px;
+  height: 66px;
+  background-color: var(--prim-color);
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(1deg);
+  transform-origin: 50% 110%;
+}
+
+.hour-top,
+.minute-top {
+  position: absolute;
+  width: 6px;
+  height: 25px;
+  background-color: var(--prim-color);
+  clip-path: polygon(40% 0, 60% 0, 100% 100%, 0% 100%);
+  left: 50%;
+  top: -45%;
+  transform: translate(-50%, -50%);
+}
+
+.minute-top {
+  height: 35px;
+  top: -28px;
+}
