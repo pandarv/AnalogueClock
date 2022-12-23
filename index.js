@@ -3,30 +3,31 @@ const mNeedle = document.querySelector('.minute-base')
 const sNeedle = document.querySelector('.second-base')
 const dialHr = document.querySelectorAll('.dial-hr')
 const secTick = document.querySelector('.seconds-dial')
-
-//second ticks on dial
-
-for(let i=1; i <= 60; i++){
-  const divTick = document.createElement('div')
-  divTick.className = 'tick'
-  const secDialTick = document.createElement('div')
-  secDialTick.className = 'second-dial'
-  secDialTick.appendChild(divTick)
-  secTick.append(secDialTick)
-}
-
+createTicks()
 const secondTick = document.querySelectorAll('.second-dial')
 const ticks = document.querySelectorAll('.tick')
 
+//second ticks on dial
+function createTicks() {
+  for(let i=1; i <= 60; i++){
+    const divTick = document.createElement('div')
+    divTick.classList.add('tick')
+    const secDialTick = document.createElement('div')
+    secDialTick.classList.add('second-dial')
+    secDialTick.appendChild(divTick)
+    secTick.append(secDialTick)
+  }
+}
 
-// Rotation of all black ticks on every second
-secondTick.forEach((dial, index) => dial.style.transform = `rotate(${6 * index}deg)`)
+const placeInCircle = (arr, angle) => arr.forEach((element, index) => element.style.transform = `rotate(${angle * index}deg)`)
 
 // Rotation of all red colored ticks on hrs
 ticks.forEach((tick, index) => index % 5 === 0 && tick.classList.add('tick-big') )
+// Rotation of all black ticks on every second
+placeInCircle(secondTick, 6)
 
 // Rotation of all the hr numbers
-dialHr.forEach((hr, index) => hr.style.transform = `rotate(${30 * index}deg)` )
+placeInCircle(dialHr, 30)
 
 setInterval(() => {
   const currentDate = new Date()
